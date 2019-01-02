@@ -50,3 +50,15 @@ Domain  | Hosted Zone
 A hosted zone is analogous to a traditional DNS zone file; it represents a collection of records that can be managed together, belonging to a single parent domain name. All resource record sets within a hosted zone must have the hosted zone’s domain name as a suffix.
 
 For example, the amazon.com hosted zone may contain records named www.amazon.com, and www.aws.amazon.com, but not a record named www.amazon.ca. You can use the Route 53 Management Console or API to create, inspect, modify, and delete hosted zones.
+
+
+## Domain Name Systems (DNS)
+AWS Route 53
+1.  Uses Anycast as a networking and routing technology that helps your end users’ DNS queries get answered from the optimal Route 53 location given network condition
+2.  Each Amazon Route 53 account is limited to a maximum of 500 hosted zones and 10,000 resource record sets per hosted zone.
+3.  Amazon Route 53 is an authoritative DNS service and does not provide website hosting
+    1.  You can use Amazon Simple Storage Service (Amazon S3) to host a static website.
+    2.  you can use Amazon Elastic Compute Cloud (Amazon EC2) to host a dynamic website or other applications.
+4.   You can also use Alias records to map your sub-domains (www.example.com, pictures.example.com, etc.) to your ELB load balancers, CloudFront distributions, or S3 website buckets.
+5.  The time for which a DNS resolver caches a response is set by a value called the time to live (TTL) associated with every record. Amazon Route 53 does not have a default TTL for any record type. You must always specify a TTL for each record so that caching DNS resolvers can cache your DNS records to the length of time specified through the TTL.
+6.  
