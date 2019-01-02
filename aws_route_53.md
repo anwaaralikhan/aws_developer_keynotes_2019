@@ -61,4 +61,6 @@ AWS Route 53
     2.  you can use Amazon Elastic Compute Cloud (Amazon EC2) to host a dynamic website or other applications.
 4.   You can also use Alias records to map your sub-domains (www.example.com, pictures.example.com, etc.) to your ELB load balancers, CloudFront distributions, or S3 website buckets.
 5.  The time for which a DNS resolver caches a response is set by a value called the time to live (TTL) associated with every record. Amazon Route 53 does not have a default TTL for any record type. You must always specify a TTL for each record so that caching DNS resolvers can cache your DNS records to the length of time specified through the TTL.
-6.  
+6.  Associating multiple IP addresses with a single record is often used for balancing the load of geographically-distributed web servers. Amazon Route 53 allows you to list multiple IP addresses for an A record and responds to DNS requests with the list of all configured IP addresses.
+7.  Amazon Route 53 is designed to propagate updates you make to your DNS records to its world-wide network of authoritative DNS servers within 60 seconds under normal conditions.The INSYNC or PENDING status of a change refers only to the state of Route 53’s authoritative DNS servers.
+8.  Via AWS CloudTrail you can record and log the API call history for Route 53. Please reference the CloudTrail product page to get started.
